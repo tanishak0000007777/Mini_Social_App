@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 text-white min-h-screen py-10 px-4">
+  <div class="max-w-3xl mx-auto">
+
+    <!-- Logout -->
+    <div class="flex justify-end mb-6">
+      <a href="/logout" class="bg-red-500 hover:bg-red-600 px-4 py-2 text-sm rounded-md transition">
+        Logout
+      </a>
+    </div>
+    
+    <div class="flex items-start gap-3">
+      <!-- Profile photo -->
+      <div class="relative">
+        <div class="w-24 h-24 rounded-full overflow-hidden">
+          <img class="w-full h-full object-cover" src="/images/uploads/<%= user.profilepic %>" alt="Profile Picture">
+        </div>
+        <!-- Refined Add Profile Photo Button -->
+        <a href="/profile/upload" class="absolute bottom-1 right-1 bg-blue-600 text-white px-2 py-1 text-xs rounded-full hover:bg-blue-700 transition-all">
+          Add
+        </a>
+      </div>
+
+      <!-- Greeting -->
+      <div>
+        <h3 class="text-3xl font-light mb-2">
+          Hello <span class="font-semibold"><%= user.name %></span> 👋
+        </h3>
+      </div>
+    </div>
+    
+    <p class="text-zinc-400 mb-6 mt-3">Create a new post below</p>
+
+    <!-- Post Form -->
+    <form action="/create" method="post" class="mb-12">
+      <textarea
+        name="content"
+        placeholder="What's on your mind?"
+        required
+        class="w-full h-24 p-3 rounded-md bg-zinc-800 border border-zinc-700 outline-none resize-none mb-4 focus:border-blue-500"
+      ></textarea>
+      <input
+        type="submit"
+        value="Create Post"
+        class="px-6 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-sm transition cursor-pointer"
+      />
+    </form>
+
+    <!-- Posts Section -->
+    <div>
+      <h3 class="text-xl text-zinc-400 mb-4">Your Posts</h3>
+      <div class="space-y-6">
+        <% user.posts.slice().reverse().forEach(function(post) { %>
+          <div class="p-4 border border-zinc-800 rounded-md">
+            <h4 class="text-blue-500 font-semibold mb-2"><%= user.username %></h4>
+            <p class="text-sm text-zinc-200"><%= post.content %></p>
+            <small class="mt-2 inline-block"> <%= post.likes.length %> Likes</small>
+            <div class="flex gap-4 mt-1">
+              <a href="/like/<%= post._id %>" class="text-blue-400 hover:underline text-sm">
+                <%= post.likes.indexOf(user._id) === -1?"Like" :"UnLike" %>
+              </a>
+              <a href="/edit/<%= post._id %>" class="text-zinc-400 hover:underline text-sm">
+                Edit
+              </a>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
