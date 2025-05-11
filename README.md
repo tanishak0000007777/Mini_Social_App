@@ -1,56 +1,37 @@
-Mini Social App
+# Mini Social App
 A simple full-stack social networking app built using Node.js, Express, MongoDB, EJS, and Tailwind CSS.
 
-Features
-Allows users to register and log in.
+## Features
+- User registration and login  
+- Upload and display profile pictures using Multer  
+- Create personal posts  
+- Like and unlike posts  
+- Session-based authentication  
 
-Upload and display profile pictures using Multer.
+## Technologies Used
+- Node.js  
+- Express.js  
+- MongoDB  
+- Mongoose  
+- EJS  
+- Tailwind CSS  
+- Multer  
 
-Users can create personal posts.
+## How to Use
+1. Clone the repository and install dependencies  
+   `git clone https://github.com/tanishak0000007777/mini-social-app.git`  
+   `cd mini-social-app`  
+   `npm install`  
 
-Like and unlike posts.
+2. Ensure MongoDB is running locally (`mongodb://127.0.0.1:27017/miniproject`)  
 
-Secure session-based authentication.
+3. Start the server  
+   `node app.js`  
 
-Technologies Used
-Node.js
+4. Open your browser and visit `http://localhost:3000`
 
-Express.js
-
-MongoDB
-
-Mongoose
-
-EJS
-
-Tailwind CSS
-
-Multer
-
-How to Use
-Clone the repository and install dependencies:
-
-bash
-Copy
-Edit
-git clone https://github.com/tanishak0000007777/mini-social-app.git
-cd mini-social-app
-npm install
-Make sure MongoDB is running locally (mongodb://127.0.0.1:27017/miniproject).
-
-Start the server:
-
-bash
-Copy
-Edit
-node app.js
-Open your browser and visit: http://localhost:3000
-
-Project Structure
-pgsql
-Copy
-Edit
-
+## Project Structure
+```
 mini-social-app/
 │── views/               # EJS templates (index, login, profile, upload)
 │── models/
@@ -60,9 +41,11 @@ mini-social-app/
 │   └── images/uploads/  # Uploaded profile pictures
 │── multer.js            # Multer file upload configuration
 │── app.js               # Main Express server
-License
+```
+
+## License
 This project is open-source and free to use. Feel free to modify and enhance it!
 
-Author
-Tanishak Bansal
+## Author
+Tanishak Bansal  
 GitHub: https://github.com/tanishak0000007777
