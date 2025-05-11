@@ -1,77 +1,68 @@
 Mini Social App
-A minimalist full-stack social app where users can register, log in, upload a profile picture, create posts, and like/unlike posts.
+A simple full-stack social networking app built using Node.js, Express, MongoDB, EJS, and Tailwind CSS.
 
-🚀 Features
-🔐 User Registration and Login
+Features
+Allows users to register and log in.
 
-🖼️ Profile Picture Upload using Multer
+Upload and display profile pictures using Multer.
 
-📝 Create and View Personal Posts
+Users can create personal posts.
 
-❤️ Like / Unlike Posts
+Like and unlike posts.
 
-🔒 Session-based Authentication
+Secure session-based authentication.
 
-🎨 TailwindCSS Styling
+Technologies Used
+Node.js
 
-🛠 Tech Stack
-Frontend: EJS + Tailwind CSS
+Express.js
 
-Backend: Node.js, Express.js
+MongoDB
 
-Database: MongoDB + Mongoose
+Mongoose
 
-File Upload: Multer
+EJS
 
-📂 Folder Structure
-bash
-Copy
-Edit
-├── public/
-│   └── images/uploads/         # Uploaded profile pictures
-├── routes/
-│   └── main.js                 # Main application routes
-├── models/
-│   ├── user.js                 # User schema
-│   └── post.js                 # Post schema
-├── views/
-│   ├── index.ejs               # Registration page
-│   ├── login.ejs               # Login page
-│   ├── profile.ejs             # Profile/dashboard
-│   └── upload.ejs              # Profile pic upload page
-├── multer.js                   # Multer storage config
-├── app.js                      # Main server file
-🔧 Setup Instructions
-Clone the repo:
+Tailwind CSS
+
+Multer
+
+How to Use
+Clone the repository and install dependencies:
 
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/mini-social-app.git
+git clone https://github.com/tanishak0000007777/mini-social-app.git
 cd mini-social-app
-Install dependencies:
-
-bash
-Copy
-Edit
 npm install
-Run MongoDB: (Ensure MongoDB is running on your local machine)
+Make sure MongoDB is running locally (mongodb://127.0.0.1:27017/miniproject).
 
-Start the app:
+Start the server:
 
 bash
 Copy
 Edit
 node app.js
-Visit http://localhost:3000
+Open your browser and visit: http://localhost:3000
 
+Project Structure
+pgsql
+Copy
+Edit
 
-
-📌 Notes
-Default profile image is set to boy.png. Uploads are stored in public/images/uploads.
-
-Post creation is user-specific and only visible in the user’s profile.
+mini-social-app/
+│── views/               # EJS templates (index, login, profile, upload)
+│── models/
+│   ├── user.js          # User schema and MongoDB connection
+│   └── post.js          # Post schema
+│── public/
+│   └── images/uploads/  # Uploaded profile pictures
+│── multer.js            # Multer file upload configuration
+│── app.js               # Main Express server
+License
+This project is open-source and free to use. Feel free to modify and enhance it!
 
 Author
 Tanishak Bansal
-GitHub:https://github.com/tanishak0000007777
+GitHub: https://github.com/tanishak0000007777
